@@ -89,13 +89,19 @@ Inicio
             para i de 1 ate 19 faca
                para j de i+1 ate 20 faca
                   se v_rank_medias[i] < v_rank_medias[j] entao
-                     temp_media <- v_rank_medias[i]; v_rank_medias[i] <- v_rank_medias[j]; v_rank_medias[j] <- temp_media
-                     temp_nome <- v_rank_nomes[i]; v_rank_nomes[i] <- v_rank_nomes[j]; v_rank_nomes[j] <- temp_nome
+                     temp_media <- v_rank_medias[i]
+			 v_rank_medias[i] <- v_rank_medias[j]
+			 v_rank_medias[j] <- temp_media
+                     temp_nome <- v_rank_nomes[i]
+			 v_rank_nomes[i] <- v_rank_nomes[j]
+			 v_rank_nomes[j] <- temp_nome
                   fimse
                fimpara
             fimpara
             escreval("RANKING TOP 20 - ", id_turmas[t_sel])
-            para i de 1 ate 20 faca: escreval(i, "º: ", v_rank_nomes[i]:20, " - ", v_rank_medias[i]:4:1) : fimpara
+            para i de 1 ate 20 faca
+		 escreval(i, "º: ", v_rank_nomes[i]:20, " - ", v_rank_medias[i]:4:1) 
+	 	fimpara
             escreva("Pressione Enter...")
             leia(temp_nome)
 
